@@ -4,9 +4,9 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - testmyfirstdotnetwebapp
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+   # branches:
+    #  - main
   workflow_dispatch:
 
 jobs:
@@ -52,4 +52,5 @@ jobs:
           app-name: 'testmyfirstdotnetwebapp'
           slot-name: 'Production'
           package: .
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9ED0533CE18146C1B139E46BD5CA006A }}
