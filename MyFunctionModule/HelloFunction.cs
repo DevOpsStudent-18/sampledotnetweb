@@ -5,20 +5,20 @@ using System.Net;
 
 namespace MyFunctionModule
 {
-	    public class HelloFunction
-		        {
-				        [Function("HelloFunction")]
-						        public HttpResponseData Run(
-									            [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
-										                FunctionContext context)
-								        {
-										            var logger = context.GetLogger("HelloFunction");
-											                logger.LogInformation("Processing request...");
+    public class HelloFunction
+    {
+        [Function("HelloFunction")]
+        public HttpResponseData Run(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
+            FunctionContext context)
+        {
+            var logger = context.GetLogger("HelloFunction");
+            logger.LogInformation("Processing request...");
 
-													            var response = req.CreateResponse(HttpStatusCode.OK);
-														                response.WriteString("Hello from Azure Function!");
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.WriteString("Hello from Azure Function!");
 
-																            return response;
-																	            }
-					    }
+            return response;
+        }
+    }
 }
